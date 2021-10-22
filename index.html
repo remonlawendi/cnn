@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CNN</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="shortcut icon" type="image/png" href="./img/logo_cnn.png">
+</head>
+
+<body  style="overflow-x: hidden;"> 
+	<header class="page-header">
+		<div class="wrapper topnav" id="myTopnav">
+			
+			<div class="page-logo">
+				<a href="https://edition.cnn.com/">
+				<img src="img/logo_cnn.png" alt="Page Logo">
+				</a>
+			</div>
+			<div class="header-left">
+			<nav class="page-nav">
+			  <ul>
+				<li><a href="https://edition.cnn.com/world">World</a></li>
+				<li><a href="https://edition.cnn.com/politics">U.S. Politics</a></li>
+				<li><a href="https://edition.cnn.com/business">business</a></li>
+				<li><a href="https://edition.cnn.com/entertainment">Entertainment</a></li>
+				<li><a href="https://edition.cnn.com/sport">Sport</a></li>
+				<li><a href="https://edition.cnn.com/travel">Travel</a></li>
+				<li><a href="https://edition.cnn.com/style">Style</a></li>
+				<li><a href="https://edition.cnn.com/health">Health</a></li>
+				<li><a href="https://edition.cnn.com/videos">Video</a></li>
+			  </ul>
+			</nav>
+		  </div><!--header-left-->
+			<div class="header-right">
+				<div class="international-edition" id="edition">
+					<input type="checkbox" id="international-switcher" hidden>
+					<label for="international-switcher">UK Edition +</label>
+					<div class="international-block">
+						<ul>
+							<li>U.S.</li>
+							<li>Arabic</li>
+							<li>Español</li>
+						</ul>
+						<hr>
+						<p>Set edition preference:</p>
+						<div class="row-block flex-block">
+						  <input type="radio" id="us-id" name="c-group" checked>
+						  <label for="us-id">U.K.</label>
+						  <input type="radio" id="inter-id" name="c-group" >
+						  <label for="inter-id">International</label>
+						</div>
+						<div class="row-block flex-block">
+						  <a href=""><button class="confirm">Confirm</button></a>
+						</div>
+					</div><!--international-block-->
+				</div><!--international-edition-->
+				<div class="page-search" id="psearch">
+					<input type="checkbox" id="search-switcher" hidden>
+					<input type="search" placeholder="Search CNN..." class="page-search-field" id="page-search-field-id">
+					<label for="page-search-field-id" class="page-search-field-label">Search >></label>
+					<label for="search-switcher" class="search-switcher-label"><i class="fas fa-search"></i></label>
+				</div>
+				<div class="header-expanded-menu">
+					<input type="checkbox" id="expanded-switcher" hidden>
+					<label for="expanded-switcher"><i class="fas fa-bars"></i></label>
+					<div class="header-expanded-menu-block">
+						<div class="wrapper">
+						<div class="expanded-top-block">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-2">
+										<div class="expanded-col">
+											<h3>Regions</h3>
+											<ul>
+												<li><a href="">U.S</a></li>
+												<li><a href="">Africa</a></li>
+												<li><a href="">Americas</a></li>
+												<li><a href="">Asia</a></li>
+												<li><a href="">China</a></li>
+												<li><a href="">Europe</a></li>
+												<li><a href="">Middle East</a></li>
+												<li><a href="">Opinion</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-2">
+										<div class="expanded-col">
+											<h3>U.S. Politics</h3>
+											<ul>
+												<li><a href="">45</a></li>
+												<li><a href="">Congress</a></li>
+												<li><a href="">Security</a></li>
+												<li><a href="">The Nine</a></li>
+												<li><a href="">Trumpmerica</a></li>
+												<li><a href="">State</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-2">
+										<div class="expanded-col">
+											<h3>Money</h3>
+											<ul>
+												<li><a href="">Business</a></li>
+												<li><a href="">Markets</a></li>
+												<li><a href="">Tech</a></li>
+												<li><a href="">Luxury</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-2">
+										<div class="expanded-col">
+											<h3>Entertainment</h3>
+											<ul>
+												<li><a href="">Stars</a></li>
+												<li><a href="">Screen</a></li>
+												<li><a href="">Binge</a></li>
+												<li><a href="">Culture</a></li>
+												<li><a href="">Media</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-2">
+										<div class="expanded-col">
+											<h3>Tech</h3>
+											<ul>
+												<li><a href="">Business</a></li>
+												<li><a href="">Culture</a></li>
+												<li><a href="">Gadgets</a></li>
+												<li><a href="">Future</a></li>
+												<li><a href="">Startups</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-2">
+										<div class="expanded-col">
+											<h3>Sport</h3>
+											<ul>
+												<li><a href="">Football</a></li>
+												<li><a href="">Golf</a></li>
+												<li><a href="">Tennis</a></li>
+												<li><a href="">Motorsport</a></li>
+												<li><a href="">Horseracing</a></li>
+												<li><a href="">Equestrian</a></li>
+												<li><a href="">Sailing</a></li>
+												<li><a href="">Skiing</a></li>
+											</ul>
+										</div>
+									</div>
+								</div><!--row-->
+								<div class="row">
+									<div class="col-2">
+										<div class="expanded-col">
+											<h3>Travel</h3>
+											<ul>
+												<li><a href="">Aviation</a></li>
+												<li><a href="">Business Traveller</a></li>
+												<li><a href="">Destinations</a></li>
+												<li><a href="">Features</a></li>
+												<li><a href="">Food/Drink</a></li>
+												<li><a href="">Hotels</a></li>
+												<li><a href="">Partner Hotels</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-2">
+										<div class="expanded-col">
+											<h3>Style</h3>
+											<ul>
+												<li><a href="">Fashion</a></li>
+												<li><a href="">Design</a></li>
+												<li><a href="">Architecture</a></li>
+												<li><a href="">Arts</a></li>
+												<li><a href="">Autos</a></li>
+												<li><a href="">Luxury</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-2">
+										<div class="expanded-col">
+											<h3>Health</h3>
+											<ul>
+												<li><a href="">Diet + Fitness</a></li>
+												<li><a href="">Living Well</a></li>
+												<li><a href="">Parenting + Family</a></li>
+												<li><a href="">Vital Signs</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-2">
+										<div class="expanded-col">
+											<h3>Features</h3>
+											<ul>
+												<li><a href="">Freedom Project</a></li>
+												<li><a href="">Impact Your World</a></li>
+												<li><a href="">Inside Africa</a></li>
+												<li><a href="">2 degrees</a></li>
+												<li><a href="">All Features</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-2">
+										<div class="expanded-col">
+											<h3>Video</h3>
+											<ul>
+												<li><a href="">Video news</a></li>
+												<li><a href="">Feature shows</a></li>
+												<li><a href="">HLN</a></li>
+												<li><a href="">TV shows</a></li>
+												<li><a href="">TV schedule</a></li>
+												<li><a href="">Faces of CNN Worldwide</a></li>
+												<li><a href="">CNNVR</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-2">
+										<div class="expanded-col">
+											<h3>More...</h3>
+											<ul>
+												<li><a href="">Weather</a></li>
+												<li><a href="">CNN Heroes</a></li>
+												<li><a href="">CNN Profiles</a></li>
+												<li><a href="">Leadership</a></li>
+												<li><a href="">Pressroom</a></li>
+												<li><a href="">Partner sites</a></li>
+												<li><a href="">iReport</a></li>
+											</ul>
+										</div>
+									</div>
+								</div><!--row-->
+							</div><!--container-fluid-->
+						</div><!--expanded-top-block-->
+						<div class="expanded-bottom-block">
+							<div class="international-block">
+							<ul>
+								<li><img src="img/logo_us.png" alt="us-logo">U.S.</li>
+								<li><img src="img/logo_esp.png" alt="logo-espanol">Español</li>
+								<li><img src="img/logo_ar.png" alt="logo-arabic">Arabic</li>
+							</ul>
+							<hr>
+							<p>Set edition preference:</p>
+							<div class="row-block flex-block">
+						  	  <input type="radio" id="us-id-1" name="c-group-1">
+							  <label for="us-id-1">U.S.</label>
+						  	  <input type="radio" id="inter-id-1" name="c-group-1" checked>
+						     <label for="inter-id-1">International</label>
+						   </div>
+						<div class="row-block flex-block">
+						  <button class="confirm">Confirm</button>
+						</div>
+					  </div><!--international-block-->
+					</div><!--expanded-bottom-block- -->
+				</div><!--wrapper-->
+		   </div><!--header-expanded-menu-block-->
+		</div><!--header-expanded-menu--->
+	</div> <!--header-right-->
+
+
+	<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+  <!--  <i class="fas fa-hamburger"></i>-->
+  	<i class="fas fa-bars"></i>
+  </a>
+
+  </div>  <!--wrapper-->
+</header>
+
+
+
+
+<main>
+	<div class="wrapper">
+	  <div class="container-fluid">
+		<section class="row">
+		 <div class="col-5 col-12 col-sm-7 col-md-6">
+			<article>
+				<a href="./newsuk-55760104.html">
+					<div class="image-block">
+						<img src="img/articles/article-1.jpg" alt="img1">
+						<div class="label-block">
+							<div class="image-label">Breaking News</div>
+						</div><!--label-block-->	
+					</div><!--image-block-->
+					<h3 class="bold">Egyptian engineer decrypted all communication 
+						for child pornography content Dealers over Europe</h3>
+				</a>
+				<ul class="last-news">
+					<li>What means Child Abuse for UK and the world?
+					</li>
+					<li>how the police Started After getting All information?</li>
+				</ul>
+			</article>
+		</div><!--col-5-->
+		<div class="col col-12 col-sm-5 col-md-3">
+			<article>
+				<a href="https://edition.cnn.com/2021/10/21/uk/uk-covid-bma-warning-gbr-intl/index.html">
+				<div class="image-block">
+					<img src="img/articles/article-2.jpg" alt="img-2">
+				</div><!--image-block-->
+				<h3 class="semi-grey">government accused of being 'willfully negligent' Covid cases mount
+				</h3>
+			</a>
+			</article>
+			<article>
+				<a href="https://edition.cnn.com/2021/10/21/uk/uk-david-amess-murder-charge-intl-gbr/index.html">
+				<div class="image-block">
+					<img src="img/articles/article-3.jpg" alt="img-3">
+				</div><!--image-block-->
+				<h3 class="semi-grey">UK lawmaker David Amess had terrorist links</h3>
+			</a>
+			</article>
+		</div><!--col-->
+		<div class="col col-12 col-sm-12 col-md-3">
+			<article>
+				<div class="category">
+					Top stories
+				</div>
+				<a href="https://edition.cnn.com/2021/10/20/economy/new-zealand-united-kingdom-trade-agreement-intl-hnk/index.html">
+					<div class="image-block">
+						<img src="img/articles/article-4.jpg" alt="img-4">	
+					</div><!--image-block-->
+					<h3 class="middle-size">New Zealand and the United Kingdom reach free trade deal</h3>
+				</a>
+				<ul class="last-news">
+					<li><a href="https://edition.cnn.com/2021/10/21/europe/eu-poland-lawsuit-intl/index.html">EU leaders lambast Poland over its challenge to union</a></li>
+					<li><a href="https://edition.cnn.com/2021/10/21/europe/moscow-lockdown-october-2021-covid-intl/index.html">Moscow is going back into lockdown as Covid-19 deaths multiply in Russia
+					</a></li>
+					<li><a href="https://edition.cnn.com/2021/10/19/uk/boris-johnson-cop26-globalism-intl-cmd/index.html">In an age of self-interest, Boris Johnson's secret COP26 weapon may have to be shame
+					</a></li>
+					<li><a href="https://edition.cnn.com/2021/10/20/uk/uk-mps-face-substantial-threat-intl/index.html">UK lawmakers now face 'substantial' threat after fatal Amess stabbing, says Home Secretary
+					</a></li>
+				</ul>
+			</article>
+		</div><!--col-->
+	   </section>	<!--row-->
+	   <section class="row">
+	   		<div class="col  col-sm-5 col-md-6 col-12">
+	   		  <article>
+				<div class="category">
+					Around the world
+				</div>
+				<a href="https://edition.cnn.com/2021/10/21/politics/us-hypersonic-test-fails/index.html">
+					<div class="image-block">
+						<img src="img/articles/article-5.jpg" alt="img5">	
+					</div><!--image-block-->
+					<h3 class="middle-size">Hypersonic weapon test failure a blow to US in race with China and Russia</h3>
+				</a>
+				<ul class="last-news">
+					<li><a href="https://edition.cnn.com/2021/10/21/politics/taiwan-china-biden-town-hall/index.html">Biden vows to protect Taiwan in event of Chinese attack at CNN town hall</a></li>
+					<li><a href="https://edition.cnn.com/2021/10/20/asia/singapore-covid-19-deaths-intl-hnk/index.html">Singapore extends Covid restrictions</a></li>
+					<li><a href="https://edition.cnn.com/2021/10/21/investing/evergrande-stock-crisis-asset-sales-hopson-intl-hnk/index.html">Evergrande teeters on the edge of collapse </a></li>
+					<li><a href="https://edition.cnn.com/2021/10/21/politics/donald-trump-social-media-truth/index.html">Why Trump's new social media company is doomed to fail</a></li>
+					<li><a href="https://edition.cnn.com/2021/10/21/australia/cleo-smith-missing-reward-intl-hnk/index.html">Australian police have 'grave concerns' for 4-year-old who went missing from a tent</a></li>
+
+				</ul>
+			</article>
+	   		</div><!--col-->
+	   			<div class="col-5 col-sm-7 col-md-6 col-12">
+	   			 <div class="category">
+					Featured
+				</div>
+	   	
+			<article class="no-margin">
+				<a href="">
+				<div class="row">
+					<div class="col-5">
+						<img src="img/articles/article-7.jpg" alt="img-7">
+					</div><!--col-5-->
+					<div class="col-7">
+						<h3 class="middle-size">Netflix made a mess of the Dave Chappelle controversy. It's a crisis of Netflix's</h3>
+					</div><!--col-7-->
+				</div><!--row-->
+			</a>
+			</article>
+				<hr>
+			<article class="no-margin">
+				<a href="https://edition.cnn.com/2021/10/20/uk/uk-europe-covid-infections-cmd-gbr-intl/index.html">
+				<div class="row">
+					<div class="col-5">
+						<img src="img/articles/article-100.jpg" alt="img-7">
+					</div><!--col-5-->
+					<div class="col-7">
+						<h3 class="middle-size">The UK has more new Covid-19 cases than France, Germany, Italy and Spain combined</h3>
+					</div><!--col-7-->
+				</div><!--row-->
+			</a>
+			</article>
+			<hr>
+			<article class="no-margin">
+				<a href="https://edition.cnn.com/style/article/benin-bronze-return-intl-gbr-scli/index.html">
+				<div class="row">
+					<div class="col-5">
+						<img src="img/articles/article-101.jpg" alt="img-7">
+					</div><!--col-5-->
+					<div class="col-7">
+						<h3 class="middle-size">Cambridge University to return Benin bronze to Nigeria in historic moment</h3>
+					</div><!--col-7-->
+				</div><!--row-->
+			</a>
+			</article>
+			<hr>
+			<article class="no-margin">
+				<a href="https://edition.cnn.com/2021/10/20/uk/uk-mps-face-substantial-threat-intl/index.html">
+				<div class="row">
+					<div class="col-5">
+						<img src="img/articles/article-102.jpg" alt="img-7">
+					</div><!--col-5-->
+					<div class="col-7">
+						<h3 class="middle-size">UK lawmakers now face 'substantial' threat after fatal Amess stabbing, says Home Secretary</h3>
+					</div><!--col-7-->
+				</div><!--row-->
+			</a>
+			</article>
+	   		</div><!--col-5-->
+	  
+	   </section><!--row/sec2-->
+
+	   <section class="mt-30">
+	   		<h3 class="section-heading">Featured Sections</h3>
+	   		<div class="row">
+	   		   <div class="col-lg-4 col-12">
+	   			<article>
+				 <div class="category">
+					Sport
+				 </div>
+				 <div class="image-block">
+					<a href="https://edition.cnn.com/2021/10/20/football/manchester-united-atalanta-champions-league-spt-intl/index.html">
+					<img src="img/articles/article-22.jpg" alt="img-22">	
+			   	 </div><!--image-block-->
+				 
+					<h3 class="middle-size">Ronaldo scores 137th Champions League goal in thriller</h3>
+				 </a>
+				 <ul class="last-news">
+					<li><a href="https://edition.cnn.com/2021/10/20/football/lionel-messi-psg-champions-league-hattrick-spt-intl/index.html">Magnanimous Messi gives up chance to score first hat-trick for PSG
+					</a></li>
+					<li><a href="https://edition.cnn.com/2021/10/15/football/mo-salah-best-premier-league-underappreciated-cmd-spt-intl/index.html">Why Mo Salah is currently the world's best player</a></li>
+					<li><a href="https://edition.cnn.com/2021/10/13/football/xabi-alonso-interview-real-sociedad-cmd-spt-intl/index.html">He ruled the world as a player. But can Xabi Alonso cut it as a coach?</a></li>
+					<li><a href="https://edition.cnn.com/2021/10/14/motorsport/pecco-bagnaia-motogp-cmd-spt-intl/index.html">As Rossi bows out, Italy has unearthed a new MotoGP star</a></li>
+				 </ul>
+			   </article>
+	   		  </div><!--col-4-->
+	   		  <div class="col-lg-4 col-12">
+	   		  	<article>
+				 <div class="category">
+					Style
+				 </div>
+				 <a href="https://edition.cnn.com/style/article/emma-raducanu-dior-ambassador/index.html">
+				 <div class="image-block">
+					<img src="img/articles/article-23.jpg" alt="img-23">	
+			   	 </div><!--image-block-->
+				 <h3 class="middle-size">Emma Raducanu is the new face of Dior</h3></a>
+				 <ul class="last-news">
+					<li><a href="https://edition.cnn.com/style/article/spencer-tunick-dead-sea-nude-photographs/index.html">Artist stages mass nude photos to highlight disappearing Dead Sea</a></li>
+					<li><a href="https://edition.cnn.com/style/article/gregor-sailer-polar-silk-road/index.html">Striking photos capture the Arctic's remotest Bulding</a></li>
+					<li><a href="https://edition.cnn.com/style/article/princess-diana-style-kate-meghan/index.html">How Kate and Meghan pay tribute to Princess Diana through their wardrobes
+					</a></li>
+					<li><a href="https://edition.cnn.com/style/article/squid-game-director-hwang-dong-hyuk-spc-hnk/index.html">'Squid Game' is so intense its director lost 6 teeth during production</a></li>
+				 </ul>
+			   </article>
+	   		  </div><!--col-4-->
+	   		  <div class="col-lg-4 col-12">
+	   		  	<article>
+				 <div class="category">
+					Opinion
+				 </div>
+				 <a href="https://edition.cnn.com/videos/opinions/2021/10/21/se-cupp-unfiltered-trump-colin-powell-liz-cheney-media-company-vpx.cnn">
+					<div class="image-block">
+						<img src="img/articles/article-24.jpg" alt="img-24">	
+						</div><!--image-block-->
+					 <h3 class="middle-size">Trump's awful comment on Powell is a taste of his media future</h3>
+				 </a>
+				 <ul class="last-news">
+					<li><a href="https://edition.cnn.com/2021/10/21/opinions/build-back-better-plan-scott/index.html">Baltimore mayor: Don't nix these key things</a></li>
+					<li><a href="https://edition.cnn.com/2021/10/20/opinions/liz-cheney-bannon-trump-january-6-committee-ghitis/index.html">Liz Cheney is right about Bannon and Trump</a></li>
+					<li><a href="https://edition.cnn.com/2021/10/20/opinions/two-people-who-could-save-us-democracy-eisen-wertheimer/index.html">Two people could save US democracy</a></li>
+					<li><a href="https://edition.cnn.com/2021/10/19/opinions/tucker-carlson-pete-buttigieg-paternity-leave-thomas/index.html">Facebook, change your CEO</a></li>
+				 </ul>
+			   </article>
+	   		  </div><!--col-4-->
+	   		</div><!--row-->
+	   		<div class="row">
+	   			<div class="col-lg-4 col-12">
+	   			  <article>
+					 <div class="category">
+						Politics
+					 </div>
+				   <a href="">
+					<div class="image-block">
+						<img src="img/articles/article-25.jpg" alt="img-25">	
+						  </div><!--image-block-->
+					   <h3 class="middle-size">Trump is hurting American tourism</h3>
+				   </a>
+				  <ul class="last-news">
+					<li><a href="https://edition.cnn.com/2021/10/21/economy/biden-federal-reserve-jerome-powell/index.html">Joe Biden's Fed conundrum: Stick with Jerome Powell or let him go?
+					</a></li>
+					<li><a href="https://edition.cnn.com/2021/10/20/opinions/liz-cheney-bannon-trump-january-6-committee-ghitis/index.html">Cheney is asking the right question about Bannon, Trump and Jan. 6</a></li>
+					<li><a href="https://edition.cnn.com/2021/10/21/politics/lawmakers-concern-pentagon-nominee/index.html">Lawmakers puzzled that Biden is yet to name nominee for senior military job</a></li>
+					<li><a href="">How Russia's economy is staying resilient</a></li>
+				  </ul>
+			     </article>
+	   			</div><!--col-4-->
+				  
+	   			<div class="col-lg-4 col-12">
+	   			  <article>
+				   <div class="category">
+					  Health 
+				   </div>
+				   <a href="https://edition.cnn.com/2021/10/20/asia/amber-crab-fossil-scn/index.html">
+					<div class="image-block">
+						<img src="img/articles/article-26.jpg" alt="img-26">	
+						  </div><!--image-block-->
+					   <h3 class="middle-size">Tiny crab preserved in 100-million-year-old amber lived among dinosaurs</h3>
+				   </a>
+				   <ul class="last-news">
+					<li><a href="https://edition.cnn.com/2021/10/20/health/sleep-sweet-spot-brain-health-wellness/index.html">Keep your brain sharp by finding your sleep 'sweet spot'</a></li>
+					<li><a href="https://edition.cnn.com/2021/10/20/world/nasa-lucy-mission-solar-array-issue-scn/index.html">NASA's Lucy mission struggles with solar array issue after launching to space</a></li>
+					<li><a href="https://edition.cnn.com/travel/article/greek-food-mediterranean-diet-travel-wellness/index.html">A glorious way of eating in Greece</a></li>
+					<li><a href="https://edition.cnn.com/2021/10/19/health/how-to-be-patient-benefits-wellness/index.html">How to become more patient with everyday annoyances</a></li>
+				   </ul>
+			     </article>
+				 <article>
+				 </div>
+				 <div class="col-lg-4 col-12">
+					<article>
+				  <div class="category">
+					 Tech 
+				  </div>
+				  <a href="https://edition.cnn.com/2021/10/21/tech/facebook-cross-check-oversight-board/index.html">
+					<div class="image-block">
+						<img src="img/articles/article-27.jpg" alt="img-26">	
+						  </div><!--image-block-->
+					   <h3 class="middle-size">Facebook kept its own oversight board in the dark on program for VIP users</h3>
+				  </a>
+				  <ul class="last-news">
+				   <li><a href="https://edition.cnn.com/videos/business/2021/08/13/social-media-fact-checks-orig.cnn-business">These Trump supporters would rather go to 'Facebook jail' than stop sharing misinformation</a></li>
+				   <li><a href="https://edition.cnn.com/2021/10/21/investing/premarket-stocks-trading/index.html">WeWork is finally going public. A lot has changed</a></li>
+				   <li><a href="https://edition.cnn.com/2021/10/21/cars/tesla-fsd-privacy/index.html">Tesla's 'full self-driving' rolls back its privacy protection of trip videos</a></li>
+				  </ul>
+				</article>
+				<article>
+				</div>
+	   </section><!--sec4-->
+	 </div> <!--container-fluid-->
+	</div><!--wrapper-->
+</main>
+<footer class="page-footer">
+   <div class="wrapper">
+   	<div class="footer-top-block">
+   		<div class="footer-weather">
+   			<p class="location">London, United Kingdom</p>
+   			<img src="img/weather-icon.png" alt="weather" height="38">
+   			<div class="temp">16°</div>
+   		</div>
+   		<div class="search-block">
+   			<input type="search" class="search-footer" id="footer-search" 
+   			 placeholder="Search CNN..." name="">
+   			<label for="footer-search"><i class="fas fa-search"></i></label>
+   		</div> 		
+   	</div><!--footer-top-block-->
+	<div class="expanded-top-block">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-2 col-4">
+				  <div class="expanded-col">
+						<h3>Regions</h3>
+						<ul>
+							<li><a href="">U.S</a></li>
+							<li><a href="">Africa</a></li>
+							<li><a href="">Americas</a></li>
+							<li><a href="">Asia</a></li>
+							<li><a href="">China</a></li>
+							<li><a href="">Europe</a></li>
+							<li><a href="">Middle East</a></li>
+							<li><a href="">Opinion</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-4">
+					<div class="expanded-col">
+						<h3>U.S. Politics</h3>
+						<ul>
+							<li><a href="">45</a></li>
+							<li><a href="">Congress</a></li>
+							<li><a href="">Security</a></li>
+							<li><a href="">The Nine</a></li>
+							<li><a href="">Trumpmerica</a></li>
+							<li><a href="">State</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-4">
+					<div class="expanded-col">
+						<h3>Money</h3>
+						<ul>
+							<li><a href="">Business</a></li>
+							<li><a href="">Markets</a></li>
+							<li><a href="">Tech</a></li>
+							<li><a href="">Luxury</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col">
+					<div class="expanded-col">
+						<h3>Entertainment</h3>
+						<ul>
+							<li><a href="">Stars</a></li>
+							<li><a href="">Screen</a></li>
+							<li><a href="">Binge</a></li>
+							<li><a href="">Culture</a></li>
+							<li><a href="">Media</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col">
+					<div class="expanded-col">
+						<h3>Tech</h3>
+						<ul>
+							<li><a href="">Business</a></li>
+							<li><a href="">Culture</a></li>
+							<li><a href="">Gadgets</a></li>
+							<li><a href="">Future</a></li>
+							<li><a href="">Startups</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col">
+					<div class="expanded-col">
+						<h3>Sport</h3>
+						<ul>
+							<li><a href="">Football</a></li>
+							<li><a href="">Golf</a></li>
+							<li><a href="">Tennis</a></li>
+							<li><a href="">Motorsport</a></li>
+							<li><a href="">Horseracing</a></li>
+							<li><a href="">Equestrian</a></li>
+							<li><a href="">Sailing</a></li>
+							<li><a href="">Skiing</a></li>
+						</ul>
+					</div>
+				</div>
+			</div><!--row-->
+			<div class="row">
+				<div class="col-lg-2 col-4">
+					<div class="expanded-col">
+						<h3>Travel</h3>
+						<ul>
+							<li><a href="">Aviation</a></li>
+							<li><a href="">Business Traveller</a></li>
+							<li><a href="">Destinations</a></li>
+							<li><a href="">Features</a></li>
+							<li><a href="">Food/Drink</a></li>
+							<li><a href="">Hotels</a></li>
+							<li><a href="">Partner Hotels</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-4">
+					<div class="expanded-col">
+						<h3>Style</h3>
+						<ul>
+							<li><a href="">Fashion</a></li>
+							<li><a href="">Design</a></li>
+							<li><a href="">Architecture</a></li>
+							<li><a href="">Arts</a></li>
+							<li><a href="">Autos</a></li>
+							<li><a href="">Luxury</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-4">
+					<div class="expanded-col">
+						<h3>Health</h3>
+						<ul>
+							<li><a href="">Diet + Fitness</a></li>
+							<li><a href="">Living Well</a></li>
+							<li><a href="">Parenting + Family</a></li>
+							<li><a href="">Vital Signs</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col">
+					<div class="expanded-col">
+						<h3>Features</h3>
+						<ul>
+							<li><a href="">Freedom Project</a></li>
+							<li><a href="">Impact Your World</a></li>
+							<li><a href="">Inside Africa</a></li>
+							<li><a href="">2 degrees</a></li>
+							<li><a href="">All Features</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col">
+					<div class="expanded-col">
+						<h3>Video</h3>
+						<ul>
+							<li><a href="">Video news</a></li>
+							<li><a href="">Feature shows</a></li>
+							<li><a href="">HLN</a></li>
+							<li><a href="">TV shows</a></li>
+							<li><a href="">TV schedule</a></li>
+							<li><a href="">Faces of CNN Worldwide</a></li>
+							<li><a href="">CNNVR</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col">
+					<div class="expanded-col">
+						<h3>More...</h3>
+						<ul>
+							<li><a href="">Weather</a></li>
+							<li><a href="">CNN Heroes</a></li>
+							<li><a href="">CNN Profiles</a></li>
+							<li><a href="">Leadership</a></li>
+							<li><a href="">Pressroom</a></li>
+							<li><a href="">Partner sites</a></li>
+							<li><a href="">iReport</a></li>
+						</ul>
+					</div>
+				</div>
+			</div><!--row-->
+		</div><!--container-fluid-->
+	</div><!--expanded-top-block-->
+	<div class="footer-bottom-block">
+	 <div class="footer-bottom-left">
+	 	<img src="img/logo_cnn.png" alt="footer-cnn-logo">
+		<div class="international-edition">
+					<input type="checkbox" id="international-switcher-f" hidden>
+					<label for="international-switcher-f">International Edition +</label>
+					<div class="international-block">
+						<p>Set edition preference:</p>
+						<div class="row-block flex-block">
+						  <input type="radio" id="us-id-3" name="c-group-3">
+						  <label for="us-id-3">U.S.</label>
+						  <input type="radio" id="inter-id-3" name="c-group-3" checked>
+						  <label for="inter-id-3">International</label>
+						</div>
+						<div class="row-block flex-block">
+						  <button class="confirm">Confirm</button>
+						</div>
+						<hr>
+						<ul>
+							<li>U.S.</li>
+							<li>Arabic</li>
+							<li>Español</li>
+						</ul>
+					</div><!--international-block-->
+		</div><!--international-edition-->
+	 </div><!--footer-bottom-left-->
+	 <div class="footer-bottom-right">
+	 	<div class="footer-copy">
+	 	  <p>© 2017 Cable News Network. Turner Broadcasting System, Inc.  All Rights Reserved.</p>
+	 	  <p>CNN Sans ™ & © 2016 Cable News Network.</p>
+	 	</div>
+	 	<div class="footer-menu">
+	 		<ul>
+	 			<li><a href="">Terms of Use</a></li>
+	 			<li><a href="">Privacy Policy</a></li>
+	 			<li><a href="" class="ad">AdChoices</a></li>
+	 			<li><a href="">Advertise with us</a></li>
+	 			<li><a href="">About us</a></li>
+	 			<li><a href="">Newsletters</a></li>
+	 			<li><a href="">Work for us</a></li>
+	 			<li><a href="">Help</a></li>
+	 			<li><a href="">Transcripts</a></li>
+	 			<li><a href="">License Footage</a></li>
+	 			<li><a href="">CNN Newsource</a></li>
+	 		</ul>
+	 	</div><!--footer-menu-->
+	 </div><!--footer-bottom-right-->
+   </div><!--wrapper-->
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
